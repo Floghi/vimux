@@ -40,7 +40,7 @@ autocmd FileType eruby setlocal expandtab shiftwidth=2 tabstop=2
 
 set laststatus=2
 " NERDTree plugin
-map , <leader>
+" map , <leader>
 map - :NERDTreeToggle<cr> " open/close nerdtree window
 map <leader>r :NERDTreeFind<cr> " this is the key to jump to the nerdtree window from any other window
 
@@ -83,3 +83,5 @@ let g:ale_enabled = 0
 " color theme
 let g:seoul256_background = 235
 colo seoul256
+
+set hlsearch 
