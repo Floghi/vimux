@@ -12,6 +12,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'junegunn/vim-peekaboo'
+Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
@@ -77,11 +79,25 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-map <c-a> :ALEToggle<cr>
+" map <c-a> :ALEToggle<cr>
 let g:ale_enabled = 0
 
 " color theme
 let g:seoul256_background = 235
 colo seoul256
 
-set hlsearch 
+set hlsearch
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+" ruby completion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+
+set pastetoggle=<F2> " paste mode helps vim in copy/paste compatibility 
+set paste
