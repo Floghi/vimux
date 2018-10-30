@@ -12,6 +12,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'lucapette/vim-ruby-doc'
 Plugin 'junegunn/vim-peekaboo'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
@@ -100,4 +101,3 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 set pastetoggle=<F2> " paste mode helps vim in copy/paste compatibility 
-set paste
