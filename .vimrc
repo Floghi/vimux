@@ -12,6 +12,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'ap/vim-buftabline'
 Plugin 'lucapette/vim-ruby-doc'
 Plugin 'junegunn/vim-peekaboo'
 Plugin 'tpope/vim-commentary'
@@ -72,7 +73,7 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 " bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
 
 nnoremap <c-j> <c-w>j
@@ -101,3 +102,9 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 set pastetoggle=<F2> " paste mode helps vim in copy/paste compatibility 
+
+" buftabline setup
+set hidden
+nnoremap <C-f> :bnext<CR>
+nnoremap <C-b> :bprev<CR>
+
